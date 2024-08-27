@@ -16,25 +16,28 @@ class _BlibleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final _prefs = StoragePrefs();
     return Card(
-      color: Color(0xffF5F5F5),
       margin: const EdgeInsets.symmetric(vertical: 6),
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ButtonCard(
           child: ListTile(
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
             title: Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17, color: _prefs.isDarkMode ? Color.fromARGB(255, 21, 21, 21):Color.fromARGB(255, 82, 81, 81)),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
-            trailing: const Text(
-              'ver',
-              style: TextStyle(
-                  color: Color(0xffF5C00B),
-                  fontWeight: FontWeight.w100,
-                  fontSize: 10),
-            ),
+            trailing: const Icon(Icons.chevron_right),
+            // trailing: const Text(
+            //   'ver',
+            //   style: TextStyle(
+            //       color: Color(0xffF5C00B),
+            //       fontWeight: FontWeight.w100,
+            //       fontSize: 10),
+            // ),
           ),
           onTap: () {
             //print(abbrev);

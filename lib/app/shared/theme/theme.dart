@@ -4,17 +4,18 @@ ThemeData themeLight() {
   return ThemeData(
     //Colores
 
-    canvasColor: Colors.grey.shade200,
-    cardColor: Colors.white,
+    canvasColor: const Color.fromARGB(255, 20, 24, 27),
+    cardColor: const Color.fromARGB(255, 241, 244, 248),
     brightness: Brightness.light,
-    primaryColor: const Color(0xFF023246), // //  Color(0xFF3E6F89)
+    primaryColor: Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
     primaryColorLight: const Color(0xFF023246),
-    hintColor: const Color(0xff9D9D9D), //COlor opaco
-    scaffoldBackgroundColor: const Color(0xffF1F4F9),
-    shadowColor: const Color(0xff023246),
+    hintColor: const Color.fromARGB(255, 87, 99, 108), //COlor opaco
+    scaffoldBackgroundColor: const Color.fromARGB(255, 241, 244, 248),
+    shadowColor: const Color.fromARGB(255, 20, 24, 27),
     indicatorColor: const Color(0xFF3E6F89),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: Colors.black, fontSize: 15),
+      bodyLarge:
+          TextStyle(color: Color.fromARGB(255, 20, 24, 27), fontSize: 14),
     ),
 
     // //accentColor: Colors.white, //Color(0xff5692FF),

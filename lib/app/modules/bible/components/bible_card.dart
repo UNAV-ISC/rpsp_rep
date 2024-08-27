@@ -15,25 +15,18 @@ class _BlibleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xffF5F5F5),
       margin: const EdgeInsets.symmetric(vertical: 6),
       elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ButtonCard(
           child: ListTile(
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
             title: Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            trailing: const Text(
-              'ver',
-              style: TextStyle(
-                  color: Color(0xffF5C00B),
-                  fontWeight: FontWeight.w100,
-                  fontSize: 10),
-            ),
+            trailing: const Icon(Icons.chevron_right),
           ),
           onTap: () {
             //print(abbrev);

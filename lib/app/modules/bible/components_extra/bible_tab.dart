@@ -1,7 +1,5 @@
 part of '../views/bible_view2.dart';
 
-
-
 class _BibleTab extends GetView<BibleController> {
   @override
   Widget build(BuildContext context) {
@@ -11,13 +9,13 @@ class _BibleTab extends GetView<BibleController> {
       length: 2,
       child: Scaffold(
         ///Cambios de tema
-        backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
+        //backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
         /////
         appBar: TabBar(
           controller: _.tabController,
           labelStyle: const TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 13),
-          labelColor: _prefs.isDarkMode? Colors.white:Colors.black,
+          labelColor: _prefs.isDarkMode ? Colors.white : Colors.black,
           unselectedLabelColor: Colors.grey,
           unselectedLabelStyle:
               const TextStyle(fontWeight: FontWeight.normal, fontSize: 13),

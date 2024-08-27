@@ -26,7 +26,7 @@ class BibleView2 extends GetView<BibleController> {
     ////
     return Scaffold(
       //Cambio de tema
-     backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
+      //backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
       ///
       body: SafeArea(
         child: Stack(
@@ -52,7 +52,6 @@ class BibleView2 extends GetView<BibleController> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        
         const Text('Biblia',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         IconButton(

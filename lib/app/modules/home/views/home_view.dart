@@ -26,11 +26,10 @@ class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    final _prefs = StoragePrefs();
+    // final _prefs = StoragePrefs();
     return Scaffold(
-      
-      backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
-      
+      //backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -42,7 +41,7 @@ class HomeView extends GetView<HomeController> {
                 const SizedBox(height: 15),
                 ..._buildCards(context),
                 const SizedBox(height: 15),
-                _Calendar(),  
+                _Calendar(),
               ],
             ),
           ),
@@ -52,21 +51,12 @@ class HomeView extends GetView<HomeController> {
   }
 
   _buildCards(BuildContext context) {
-  // ignore: no_leading_underscores_for_local_identifiers
-  final _prefs = StoragePrefs();
-  //print(_prefs.isDarkMode);
+    // ignore: no_leading_underscores_for_local_identifiers
+    // final _prefs = StoragePrefs();
     return [
       _HomeCard(
         icon: Stack(
           children: [
-            Positioned(
-              top: 10,
-              right: 2,
-              child: CircleAvatar(
-                backgroundColor: Theme.of(context).indicatorColor,
-                radius: 10,
-              ),
-            ),
             Icon(
               FontAwesomeIcons.solidCalendarCheck,
               color: iconCOlor,
@@ -75,7 +65,6 @@ class HomeView extends GetView<HomeController> {
         ),
         title: 'Cita Diaria',
         rightText: 'Mateo 4:15',
-        //theme: _prefs.isDarkMode,
         onPressed: () => navigateTo(
           context,
           const CitaDiariaView(
@@ -88,14 +77,6 @@ class HomeView extends GetView<HomeController> {
       _HomeCard(
           icon: Stack(
             children: [
-              Positioned(
-                top: 5,
-                left: 3,
-                child: CircleAvatar(
-                  backgroundColor: Theme.of(context).indicatorColor,
-                  radius: 10,
-                ),
-              ),
               Icon(
                 FontAwesomeIcons.solidCirclePlay,
                 color: iconCOlor,
@@ -109,15 +90,6 @@ class HomeView extends GetView<HomeController> {
       _HomeCard(
         icon: Stack(
           children: [
-            Positioned(
-              top: 0,
-              left: 3,
-              child: Container(
-                width: 20,
-                height: 30,
-                color: Theme.of(context).indicatorColor,
-              ),
-            ),
             Icon(FontAwesomeIcons.bookBible, color: iconCOlor),
           ],
         ),
@@ -129,29 +101,17 @@ class HomeView extends GetView<HomeController> {
       _HomeCard(
           icon: Stack(
             children: [
-              Positioned(
-                top: 0,
-                left: 3,
-                child: Container(
-                  width: 20,
-                  height: 30,
-                  color: Theme.of(context).indicatorColor,
-                ),
-              ),
               Icon(FontAwesomeIcons.book, color: iconCOlor),
             ],
           ),
           title: 'EGW',
           rightText: 'Capítulo 4',
           onPressed: () => (
-          // navigateTo(
-          //   context,
-          //   const TextView(title: 'Titulo', subTitle: 'Subtitulo'),
-          // ),
-          navigateTo(context, EGWView())
-
-          )
-          ),
+              // navigateTo(
+              //   context,
+              //   const TextView(title: 'Titulo', subTitle: 'Subtitulo'),
+              // ),
+              navigateTo(context, EGWView()))),
       _HomeCard(
         icon: Icon(FontAwesomeIcons.music, color: iconCOlor),
         title: 'Himno',
