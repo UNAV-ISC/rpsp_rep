@@ -1,47 +1,39 @@
 part of '../views/home_view.dart';
 
-
 class _HomeCard extends StatelessWidget {
   final Widget icon;
   final String title;
   final String rightText;
   final VoidCallback onPressed;
-  
-  //final bool theme;
 
   const _HomeCard({
     required this.icon,
     required this.title,
     this.rightText = '',
     required this.onPressed,
-    //required this.theme,
   });
 
   @override
   Widget build(BuildContext context) {
-    final _prefs = StoragePrefs();
-     
-
     return Card(
-      color: const Color(0xffF5F5F5),
-      //color: _prefs.isDarkMode ? Colors.grey : Colors.black,
       margin: const EdgeInsets.symmetric(vertical: 6),
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: _ButtonCard(
         onTap: onPressed,
         child: ListTile(
-          contentPadding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
           //visualDensity: VisualDensity.compact,
           // contentPadding: EdgeInsets.only(left: 15, right: 0),
           leading: icon,
           title: Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: _prefs.isDarkMode ? Colors.grey : Colors.black), 
+            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
           ),
           trailing: Text(
             rightText,
-            style: TextStyle(fontWeight: FontWeight.w100, fontSize: 13, color: _prefs.isDarkMode ? Colors.grey : Colors.black),
+            style: const TextStyle(fontWeight: FontWeight.w200, fontSize: 14),
           ),
         ),
       ),

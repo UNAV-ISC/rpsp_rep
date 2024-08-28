@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 
 ThemeData themeLight() {
   return ThemeData(
     //Colores
 
-    canvasColor: const Color.fromARGB(255, 20, 24, 27),
+    //canvasColor: const Color.fromARGB(255, 20, 24, 27),
     cardColor: const Color.fromARGB(255, 241, 244, 248),
     brightness: Brightness.light,
-    primaryColor: Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
-    primaryColorLight: const Color(0xFF023246),
+    primaryColor: const Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
     hintColor: const Color.fromARGB(255, 87, 99, 108), //COlor opaco
     scaffoldBackgroundColor: const Color.fromARGB(255, 241, 244, 248),
     shadowColor: const Color.fromARGB(255, 20, 24, 27),
     indicatorColor: const Color(0xFF3E6F89),
+    iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
     textTheme: const TextTheme(
       bodyLarge:
           TextStyle(color: Color.fromARGB(255, 20, 24, 27), fontSize: 14),
@@ -23,17 +24,11 @@ ThemeData themeLight() {
 
     //AppBar
     appBarTheme: const AppBarTheme(
-      iconTheme: IconThemeData(color: Colors.white),
+      iconTheme: IconThemeData(color: scaffoldBackgroundColor),
       //color: Colors.black,
-      actionsIconTheme: IconThemeData(color: Colors.white),
-
-      /////////////////////////
-      // textTheme: TextTheme(
-      //   headline6:
-      //       TextStyle(color: Colors.white, fontSize: 20), //Letra blanca
-      // )
+      actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor),
     ),
-    colorScheme: const ColorScheme.light(background: Colors.white),
+    colorScheme: const ColorScheme.light(background: scaffoldBackgroundColor),
 
     //Botones
 

@@ -21,15 +21,10 @@ part '../components/bible_dialog.dart';
 part '../components/calendar.dart';
 
 class HomeView extends GetView<HomeController> {
-  final iconCOlor = const Color(0xff4B4B49);
-
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    // final _prefs = StoragePrefs();
     return Scaffold(
-      //backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
-
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -51,15 +46,12 @@ class HomeView extends GetView<HomeController> {
   }
 
   _buildCards(BuildContext context) {
-    // ignore: no_leading_underscores_for_local_identifiers
-    // final _prefs = StoragePrefs();
     return [
       _HomeCard(
-        icon: Stack(
+        icon: const Stack(
           children: [
             Icon(
               FontAwesomeIcons.solidCalendarCheck,
-              color: iconCOlor,
             ),
           ],
         ),
@@ -75,11 +67,10 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       _HomeCard(
-          icon: Stack(
+          icon: const Stack(
             children: [
               Icon(
                 FontAwesomeIcons.solidCirclePlay,
-                color: iconCOlor,
               ),
             ],
           ),
@@ -88,9 +79,9 @@ class HomeView extends GetView<HomeController> {
           onPressed: () => Get.toNamed(Routes.youtubePlayer)),
       //onPressed: () => Get.toNamed(Routes.VIDEO_PLAYER)),
       _HomeCard(
-        icon: Stack(
+        icon: const Stack(
           children: [
-            Icon(FontAwesomeIcons.bookBible, color: iconCOlor),
+            Icon(FontAwesomeIcons.bookBible),
           ],
         ),
         title: 'Biblia',
@@ -99,9 +90,9 @@ class HomeView extends GetView<HomeController> {
         onPressed: () => _bibleDialog(context),
       ),
       _HomeCard(
-          icon: Stack(
+          icon: const Stack(
             children: [
-              Icon(FontAwesomeIcons.book, color: iconCOlor),
+              Icon(FontAwesomeIcons.book),
             ],
           ),
           title: 'EGW',
@@ -113,13 +104,13 @@ class HomeView extends GetView<HomeController> {
               // ),
               navigateTo(context, EGWView()))),
       _HomeCard(
-        icon: Icon(FontAwesomeIcons.music, color: iconCOlor),
+        icon: const Icon(FontAwesomeIcons.music),
         title: 'Himno',
         rightText: '#125',
         onPressed: () => Get.toNamed(Routes.hymnPlayer),
       ),
       _HomeCard(
-        icon: Icon(FontAwesomeIcons.handsPraying, color: iconCOlor),
+        icon: const Icon(FontAwesomeIcons.handsPraying),
         title: 'Oración',
         onPressed: () => _prayerDialog(context),
       ),

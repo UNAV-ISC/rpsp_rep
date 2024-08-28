@@ -15,64 +15,52 @@ class UserDataLogo extends StatelessWidget {
     final user = _userProvider.user;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: AvatarImage(
-              bigRadius: 35,
-              smallRadius: 30,
-              externalColor: Colors.white,
-              file: File(''),
-            ),
+          AvatarImage(
+            bigRadius: 35,
+            smallRadius: 30,
+            externalColor: Colors.white,
+            file: File(''),
           ),
           const SizedBox(width: 10),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(height: 15),
               Wrap(
                 direction: Axis.vertical,
-                spacing: -5, // <-- Spacing between children
-                children: <Widget>[
-                  Text(
-                    user.name,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    user.lastName,
-                    style: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.w600),
-                  ),
-                ],
+                children: user.name
+                    .split(' ')
+                    .map((e) => Text(e,
+                        style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor)))
+                    .toList(),
               ),
               const SizedBox(height: 5),
               const StarsLevel(),
             ],
           ),
           const Spacer(),
-          Wrap(
-            direction: Axis.vertical,
-            spacing: -5, // <-- Spacing between children
-            crossAxisAlignment: WrapCrossAlignment.end,
-            children: <Widget>[
-              Text(
-                'RPSP',
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor),
-              ),
-              const Text(
-                '2021',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-              ),
-            ],
+          Container(
+            child: Wrap(
+              direction: Axis.vertical,
+              crossAxisAlignment: WrapCrossAlignment.end,
+              children: <Widget>[
+                Text(
+                  'RPSP',
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor),
+                )
+              ],
+            ),
           )
         ],
       ),
