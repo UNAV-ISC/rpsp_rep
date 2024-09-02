@@ -55,17 +55,14 @@ class _BottomBarViewState extends State<BottomBarView> {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          // shape: const CircularNotchedRectangle(),
-
+          shape: const CircularNotchedRectangle(),
           elevation: 0,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
-            iconSize: 25,
-            elevation: 20,
             unselectedFontSize: 10,
-            selectedFontSize: 10,
+            selectedFontSize: 12,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-            unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w700),
+            unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
             //backgroundColor: const Color(0xffF3F4F8),
             currentIndex: _currentIndex,
             onTap: (index) {
@@ -107,7 +104,7 @@ class _BottomBarViewState extends State<BottomBarView> {
     return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            elevation: 50,
+            elevation: 0,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             title: const Text(
               '¿Estás seguro qué deseas salir de la app?',
