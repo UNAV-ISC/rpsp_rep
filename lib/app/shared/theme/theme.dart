@@ -2,32 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 
 ThemeData themeLight() {
+  print('themeLight');
   return ThemeData(
-    //Colores
-
     //canvasColor: const Color.fromARGB(255, 20, 24, 27),
-    cardColor: const Color.fromARGB(255, 241, 244, 248),
+    cardColor: const Color.fromARGB(255, 255, 255, 255),
     brightness: Brightness.light,
     primaryColor: const Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
-    hintColor: const Color.fromARGB(255, 87, 99, 108), //COlor opaco
+    hintColor: const Color.fromARGB(255, 255, 255, 255), //COlor opaco
     scaffoldBackgroundColor: const Color.fromARGB(255, 241, 244, 248),
-    shadowColor: const Color.fromARGB(255, 20, 24, 27),
-    indicatorColor: const Color(0xFF3E6F89),
+    shadowColor: const Color.fromARGB(94, 20, 24, 27),
+    indicatorColor: const Color.fromARGB(255, 62, 111, 137),
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
     textTheme: const TextTheme(
-      bodyLarge:
-          TextStyle(color: Color.fromARGB(255, 20, 24, 27), fontSize: 14),
-    ),
-
-    // //accentColor: Colors.white, //Color(0xff5692FF),
-    // errorColor: Color(0xffE94040),
-
-    //AppBar
+        bodyLarge: TextStyle(color: Color.fromARGB(255, 20, 24, 27))),
     appBarTheme: const AppBarTheme(
-      iconTheme: IconThemeData(color: scaffoldBackgroundColor),
-      //color: Colors.black,
-      actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor),
-    ),
+        iconTheme: IconThemeData(color: scaffoldBackgroundColor),
+        actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor)),
     colorScheme: const ColorScheme.light(background: scaffoldBackgroundColor),
 
     //Botones
@@ -41,6 +31,24 @@ ThemeData themeLight() {
     // ),
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ThemeData createTheme(Brightness brightness) {
 //   var theme = ThemeData(

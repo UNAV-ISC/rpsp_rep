@@ -29,7 +29,10 @@ class MyApp extends StatelessWidget {
         S.delegate
       ],
       supportedLocales: S.delegate.supportedLocales,
-      theme: _prefs.darkTheme ? themeDark() : themeLight(),
+      theme: _prefs.isDarkMode ? themeDark() : themeLight(),
+      //theme: themeLight(),
+      //darkTheme: themeDark(),
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       title: "RPSP",
       initialRoute: AppPages.initial,

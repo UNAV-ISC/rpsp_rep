@@ -21,12 +21,12 @@ class _DarkModeSwitch extends GetView<ProfileController> {
           value: _.darkMode.value,
           onToggle: (value) {
             _.darkMode.value = value;
-            Get.changeTheme(Get.isDarkMode ? themeLight() : ThemeData.dark());
+            Get.changeTheme(Get.isDarkMode ? themeLight() : themeDark());
             print(Get.isDarkMode);
             _prefs.darkTheme = !Get.isDarkMode;
             _prefs.isDarkMode = !Get.isDarkMode;
             //Recarga de página
-           // Navigator.pushReplacement(
+            // Navigator.pushReplacement(
             //  context,
             //  MaterialPageRoute(builder: (context) => ProfileView()),
             //);

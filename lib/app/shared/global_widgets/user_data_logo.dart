@@ -35,31 +35,27 @@ class UserDataLogo extends StatelessWidget {
                 direction: Axis.vertical,
                 children: user.name
                     .split(' ')
-                    .map((e) => Text(e,
-                        style: TextStyle(
+                    .map((e) => Text(
+                          e,
+                          style: const TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor)))
+                          ),
+                        ))
                     .toList(),
               ),
-              const SizedBox(height: 5),
               const StarsLevel(),
             ],
           ),
           const Spacer(),
           Container(
-            child: Wrap(
-              direction: Axis.vertical,
-              crossAxisAlignment: WrapCrossAlignment.end,
-              children: <Widget>[
-                Text(
-                  'RPSP',
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor),
-                )
-              ],
+            alignment: Alignment.centerRight,
+            child: const Text(
+              'RPSP',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],

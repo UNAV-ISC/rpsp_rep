@@ -24,12 +24,11 @@ class _BottomBarViewState extends State<BottomBarView> {
 
   @override
   Widget build(BuildContext context) {
-///change
-final _prefs = StoragePrefs();
+    ///change
+    final _prefs = StoragePrefs();
     return WillPopScope(
       onWillPop: () async => _onWillPop(context),
       child: Scaffold(
-        backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
         body: IndexedStack(
           index: _currentIndex,
           children: <Widget>[
@@ -58,17 +57,16 @@ final _prefs = StoragePrefs();
         bottomNavigationBar: BottomAppBar(
           // shape: const CircularNotchedRectangle(),
 
-          elevation: 10,
-          color: const Color(0xffF3F4F8),
+          elevation: 0,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
             iconSize: 25,
             elevation: 20,
             unselectedFontSize: 10,
             selectedFontSize: 10,
-            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold ),
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w700),
-            backgroundColor: const Color(0xffF3F4F8),
+            //backgroundColor: const Color(0xffF3F4F8),
             currentIndex: _currentIndex,
             onTap: (index) {
               setState(() {
@@ -90,11 +88,9 @@ final _prefs = StoragePrefs();
               // }
             },
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Theme.of(context).primaryColor,
-            unselectedItemColor: Colors.grey,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'Perfil' ),
+                  icon: Icon(Icons.person), label: 'Perfil'),
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
               BottomNavigationBarItem(
                   icon: Icon(FontAwesomeIcons.bookBible), label: 'Biblia'),

@@ -71,25 +71,25 @@ class __CalendarState extends State<_Calendar> {
           calendarStyle: const CalendarStyle(
             todayDecoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xffF5C00B),
+              color: Color.fromARGB(255, 57, 210, 192),
             ),
             todayTextStyle: TextStyle(
               fontSize: 17,
-              color: Colors.white,
               fontWeight: FontWeight.w700,
             ),
-            disabledTextStyle: TextStyle(color: Colors.black87),
           ),
           firstDay: kFirstDay,
           lastDay: kLastDay,
           focusedDay: _focusedDay,
           calendarFormat: _calendarFormat,
-          headerStyle: HeaderStyle(
+          headerStyle: const HeaderStyle(
             // leftChevronIcon: Icon(Icons.arrow_left),
             // rightChevronIcon: Icon(Icons.arrow_right),
             // titleCentered: true,
-            headerPadding: const EdgeInsets.only(left: 10, top: 8, bottom: 8),
-            titleTextStyle: TextStyle(color: _prefs.isDarkMode ? Colors.grey : Colors.black, fontSize: 18),
+            headerPadding: EdgeInsets.only(left: 10, top: 8, bottom: 8),
+            titleTextStyle: TextStyle(
+                // color: _prefs.isDarkMode ? Colors.grey : Colors.black,
+                fontSize: 18),
             leftChevronVisible: false,
             rightChevronVisible: false,
             formatButtonVisible: false,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 import '../../home/views/home_view.dart';
 
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     final _ = controller;
-    
+
     responsive = Responsive(context);
 
     return Scaffold(
@@ -58,7 +59,7 @@ class ProfileView extends GetView<ProfileController> {
 
   Widget _verticalData(context) {
     final _ = controller;
-   
+
     return Column(
       children: [
         ListTile(
@@ -88,7 +89,6 @@ class ProfileView extends GetView<ProfileController> {
           icon: FontAwesomeIcons.user,
           title: 'Nombre',
           info: _.user.name,
-          
         ),
         ProfileDataInfo(
           icon: FontAwesomeIcons.solidCalendarDays,
