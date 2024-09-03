@@ -61,12 +61,12 @@ class BibleView2 extends GetView<BibleController> {
       ],
     );
   }
-
+/*
   Widget _backButton(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.arrow_back_ios_new),
       onPressed: () => Navigator.pop(context),
       //onPressed: () {},
     );
-  }
+  }*/
 }
