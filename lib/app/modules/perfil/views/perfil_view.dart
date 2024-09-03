@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rpsp_main/app/shared/global_widgets/buttons/custom_material_button.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 import '../../home/views/home_view.dart';
+//import 'package:rpsp_main/app/shared/responisve/responsive.dart';
 
 import 'package:get/get.dart';
 import 'package:rpsp_main/app/modules/edit_profile/views/edit_profile_view.dart';
@@ -17,6 +19,7 @@ import 'package:rpsp_main/app/shared/global_widgets/profile_data_info.dart';
 import 'package:rpsp_main/app/shared/responisve/responsive.dart';
 
 part '../components/dark_mode_switch.dart';
+part '../components/theme_dialog.dart';
 part '../components/ver_button.dart';
 
 // ignore: must_be_immutable

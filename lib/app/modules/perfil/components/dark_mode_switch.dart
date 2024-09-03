@@ -23,6 +23,7 @@ class _DarkModeSwitch extends GetView<ProfileController> {
             _.darkMode.value = value;
             Get.changeTheme(Get.isDarkMode ? themeLight() : themeDark());
             print(Get.isDarkMode);
+            _themeDialog(context);
             _prefs.darkTheme = !Get.isDarkMode;
             _prefs.isDarkMode = !Get.isDarkMode;
 
