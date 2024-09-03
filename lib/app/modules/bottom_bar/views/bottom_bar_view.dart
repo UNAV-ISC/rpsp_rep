@@ -55,7 +55,8 @@ class _BottomBarViewState extends State<BottomBarView> {
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
+          // shape: const CircularNotchedRectangle(),
+
           elevation: 0,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(

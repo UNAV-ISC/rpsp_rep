@@ -28,19 +28,20 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                UserDataLogo(),
-                const SizedBox(height: 15),
-                ..._buildCards(context),
-                const SizedBox(height: 15),
-                _Calendar(),
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              const SizedBox(height: 20),
+              UserDataLogo(),
+              const SizedBox(height: 20),
+              ..._buildCards(context),
+              const SizedBox(height: 40),
+              _Calendar(),
+            ],
           ),
         ),
       ),

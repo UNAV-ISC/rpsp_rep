@@ -9,8 +9,7 @@ ThemeData themeLight() {
     brightness: Brightness.light,
     primaryColor: const Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
     hintColor: const Color.fromARGB(255, 255, 255, 255), //COlor opaco
-    scaffoldBackgroundColor: const Color.fromARGB(255, 241, 244, 248),
-    shadowColor: const Color.fromARGB(94, 20, 24, 27),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 226, 229, 233),
     indicatorColor: const Color.fromARGB(255, 62, 111, 137),
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
     textTheme: const TextTheme(
@@ -18,7 +17,14 @@ ThemeData themeLight() {
     appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(color: scaffoldBackgroundColor),
         actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor)),
-    colorScheme: const ColorScheme.light(background: scaffoldBackgroundColor),
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Color.fromARGB(255, 241, 244, 248),
+      selectedItemColor: Color.fromARGB(255, 29, 36, 40),
+      unselectedItemColor: Color.fromARGB(255, 87, 99, 108),
+      selectedIconTheme: IconThemeData(color: Color.fromARGB(255, 29, 36, 40)),
+      showUnselectedLabels: true,
+    ),
 
     //Botones
 

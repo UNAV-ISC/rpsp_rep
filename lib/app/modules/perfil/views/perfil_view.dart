@@ -72,8 +72,7 @@ class ProfileView extends GetView<ProfileController> {
                     const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               IconButton(
-                icon: const Icon(Icons.edit, color: Color(0xffF5C00B)),
-                // onPressed: () => Get.to(EditProfileView())
+                icon: const Icon(Icons.edit),
                 onPressed: () => navigateTo(context, EditProfileView()),
               )
             ],
@@ -81,8 +80,7 @@ class ProfileView extends GetView<ProfileController> {
           subtitle: Text(
             _.user.email,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                fontSize: 15, fontWeight: FontWeight.w600, color: Colors.grey),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
           ),
         ),
         ProfileDataInfo(
