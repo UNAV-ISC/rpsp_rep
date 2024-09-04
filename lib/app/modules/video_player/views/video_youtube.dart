@@ -98,12 +98,13 @@ class _YouTubeVideoListScreenState extends State<YouTubeVideoListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const Text('Reavivados por su Palabra'),
       ),
       body: WebViewWidget(
         controller: WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..setBackgroundColor(const Color(0x00000000))
+          ..setBackgroundColor(Theme.of(context).scaffoldBackgroundColor)
           ..setNavigationDelegate(
             NavigationDelegate(
               onProgress: (int progress) {

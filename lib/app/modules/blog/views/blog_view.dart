@@ -13,12 +13,13 @@ class _BlogViewState extends State<BlogView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const Text('Blog RPSP'),
       ),
       body: WebViewWidget(
         controller: WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..setBackgroundColor(const Color(0x00000000))
+          ..setBackgroundColor(Theme.of(context).scaffoldBackgroundColor)
           ..setNavigationDelegate(
             NavigationDelegate(
               onProgress: (int progress) {
@@ -28,7 +29,8 @@ class _BlogViewState extends State<BlogView> {
               onPageFinished: (String url) {},
               onWebResourceError: (WebResourceError error) {},
               onNavigationRequest: (NavigationRequest request) {
-                if (request.url.startsWith('https://www.youtube.com/')) {
+                if (request.url
+                    .startsWith('https://reavivados.adventistasumn.org/')) {
                   return NavigationDecision.prevent;
                 }
                 return NavigationDecision.navigate;

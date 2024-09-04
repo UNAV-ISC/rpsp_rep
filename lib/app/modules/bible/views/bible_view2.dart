@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-//import 'package:rpsp_main/app/modules/home/views/home_view.dart';
 import 'package:rpsp_main/app/modules/text/views/text_view.dart';
 import 'package:rpsp_main/app/shared/global_widgets/buttons/buttom_card.dart';
-//import '../components_extra/bible_tab.dart';
 import '../controllers/bible_controller.dart';
 import 'app_bar_custom.dart'; // Actualiza la ruta según la ubicación real del archivo
 import 'package:rpsp_main/app/shared/share_prefs/storage_prefs.dart';
