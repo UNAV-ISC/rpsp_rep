@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 //import 'package:rpsp/app/modules/hymn_player/components/player_widget.dart';
 import 'package:rpsp_main/app/modules/hymn_player/controllers/hymn_player_controller.dart';
 import 'package:rpsp_main/app/shared/helpers/date_2_spanish_date.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 // class HymnPlayerView extends GetView<HymnPlayerController> {
 //   @override
@@ -67,9 +68,9 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
                     shadows: _shadows,
                   ),
                 ),
-
-                /////////////////
-                // AudioPlayerWidget(url: _.audioUrl),
+                 SizedBox(height: 20),
+                _buildWebViewWidget(),
+                
               ],
             ),
           ),
@@ -131,6 +132,47 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
   }
 }
 
+ Widget _buildWebViewWidget() {
+    // Crear un controlador para WebView
+    final controller = WebViewController()
+      ..loadHtmlString('''
+        <html>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              body { margin: 0; }
+              .u-audio-main-layout-wrapper { padding: 20px; }
+            </style>
+          </head>
+          <body>
+            <div class="u-audio-main-layout-wrapper">
+              <div class="u-audio-cover-layout">
+                <div style="background-image: url('images/app_icon_adaptive11.png');" class="u-audio-cover" data-hook="cover"></div>
+              </div>
+              <div class="u-audio-main-layout">
+                <div class="u-audio-upper-layout">
+                  <div class="player-track-meta"></div>
+                </div>
+                <audio id="stream" controls style="width: 300px;">
+                  <source src="https://cloudstream2036.conectarhosting.com/8048/stream" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </body>
+        </html>
+      '''); // Cargar HTML directamente como una cadena
+
+    return Container(
+      height: 400, // Ajusta el alto del contenedor según sea necesario
+      child: WebViewWidget(
+        controller: controller,
+      ),
+    );
+  }
+
+
+
+
 class _CustomImage extends StatelessWidget {
   final _shadows = [
     const BoxShadow(
@@ -139,6 +181,9 @@ class _CustomImage extends StatelessWidget {
       spreadRadius: 1.0,
     )
   ];
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -179,9 +224,16 @@ class _CustomImage extends StatelessWidget {
                 shadows: _shadows,
               ),
             ),
-          ],
+            
+  ]
         ),
       ),
     );
   }
 }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
