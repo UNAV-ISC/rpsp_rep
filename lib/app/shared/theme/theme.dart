@@ -7,13 +7,19 @@ ThemeData themeLight() {
     //canvasColor: const Color.fromARGB(255, 20, 24, 27),
     cardColor: const Color.fromARGB(255, 255, 255, 255),
     brightness: Brightness.light,
-    primaryColor: const Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
+    primaryColor: const Color.fromARGB(255, 29, 36, 40),
     hintColor: const Color.fromARGB(255, 255, 255, 255), //COlor opaco
     scaffoldBackgroundColor: const Color.fromARGB(255, 226, 229, 233),
     indicatorColor: const Color.fromARGB(255, 62, 111, 137),
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
-    textTheme: const TextTheme(
-        bodyLarge: TextStyle(color: Color.fromARGB(255, 20, 24, 27))),
+    primaryTextTheme: const TextTheme(
+      titleLarge: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+      titleMedium: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+      titleSmall: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+      bodyLarge: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+      bodyMedium: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+      bodySmall: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+    ),
     appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(color: scaffoldBackgroundColor),
         actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor)),

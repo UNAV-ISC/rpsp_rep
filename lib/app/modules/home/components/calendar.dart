@@ -71,7 +71,7 @@ class __CalendarState extends State<_Calendar> {
           calendarStyle: const CalendarStyle(
             todayDecoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color.fromARGB(255, 57, 210, 192),
+              //color: Color.fromARGB(255, 57, 210, 192),
             ),
             todayTextStyle: TextStyle(
               fontSize: 17,

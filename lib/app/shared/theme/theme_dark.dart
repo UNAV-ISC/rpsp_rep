@@ -13,6 +13,7 @@ const kSplashColor = Color(0xFF3E6F89);
 ThemeData themeDark() {
   return ThemeData.dark().copyWith(
     primaryColor: kPrimaryColor,
+    primaryColorDark: kSecondaryContentColorDarkTheme,
     secondaryHeaderColor: kContentColorDarkTheme,
     scaffoldBackgroundColor: scaffoldBackgroundColor,
     cardTheme: const CardTheme(color: kSecondaryColor),
