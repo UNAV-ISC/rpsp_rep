@@ -1,10 +1,10 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
-import '../../home/views/home_view.dart';
 
-import 'package:get/get.dart';
 import 'package:rpsp_main/app/modules/edit_profile/views/edit_profile_view.dart';
 import 'package:rpsp_main/app/shared/global_widgets/starts_level.dart';
 import 'package:rpsp_main/app/shared/helpers/navigate_to.dart';
@@ -32,32 +32,104 @@ class ProfileView extends GetView<ProfileController> {
     responsive = Responsive(context);
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                AvatarImage(
-                  bigRadius: 86,
-                  externalColor: Colors.white,
+          child: Column(
+            children: [
+              AvatarImage(
+                  bigRadius: 50,
                   file: _.file,
                   captureImage: _.captureImage,
-                  selectImage: _.selectImageFromGallery,
-                ),
-                const SizedBox(height: 15),
-                _verticalData(context),
-                _rowData()
-              ],
-            ),
+                  selectImage: _.selectImageFromGallery),
+              _dataProfile(context),
+              _links(),
+              _dataPersonal(context),
+              _rowData()
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget _verticalData(context) {
+  Widget _links() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 24, 16, 32),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(children: [
+            Container(
+                height: 46,
+                width: 46,
+                decoration: BoxDecoration(
+                    color: Get.theme.splashColor, shape: BoxShape.circle),
+                child: const Icon(FontAwesomeIcons.medal, size: 24)),
+            const SizedBox(height: 12),
+            const Text('Medallero', style: TextStyle(fontSize: 16))
+          ]),
+          Column(children: [
+            Container(
+                height: 46,
+                width: 46,
+                decoration: BoxDecoration(
+                    color: Get.theme.splashColor, shape: BoxShape.circle),
+                child: const Icon(FontAwesomeIcons.medal, size: 24)),
+            const SizedBox(height: 12),
+            const Text('Medallero', style: TextStyle(fontSize: 16))
+          ]),
+          Column(children: [
+            Container(
+                height: 46,
+                width: 46,
+                decoration: BoxDecoration(
+                    color: Get.theme.splashColor, shape: BoxShape.circle),
+                child: const Icon(FontAwesomeIcons.question, size: 24)),
+            const SizedBox(height: 12),
+            const Text('Ayuda', style: TextStyle(fontSize: 16))
+          ]),
+        ],
+      ),
+    );
+  }
+
+  Widget _dataPersonal(context) {
+    final _ = controller;
+
+    return Container(
+      width: responsive.width,
+      height: 400,
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12), topRight: Radius.circular(12))),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const Text('Mis Datos',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+            ProfileDataInfo(
+              icon: FontAwesomeIcons.solidCalendarDays,
+              title: 'Cumpleaños',
+              info: _.user.birthDate!,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _dataProfile(context) {
     final _ = controller;
 
     return Column(
@@ -69,35 +141,35 @@ class ProfileView extends GetView<ProfileController> {
               Text(
                 '${_.user.name} ${_.user.lastName}',
                 style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () => navigateTo(context, EditProfileView()),
-              )
+              // IconButton(
+              //   icon: const Icon(Icons.edit),
+              //   onPressed: () => navigateTo(context, EditProfileView()),
+              // )
             ],
           ),
           subtitle: Text(
             _.user.email,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
           ),
         ),
-        ProfileDataInfo(
-          icon: FontAwesomeIcons.user,
-          title: 'Nombre',
-          info: _.user.name,
-        ),
-        ProfileDataInfo(
-          icon: FontAwesomeIcons.solidCalendarDays,
-          title: 'Fecha de nacimiento',
-          info: _.user.birthDate!,
-        ),
-        ProfileDataInfo(
-          icon: FontAwesomeIcons.at,
-          title: 'Correo Electrónico',
-          info: _.user.birthDate!,
-        ),
+        // ProfileDataInfo(
+        //   icon: FontAwesomeIcons.user,
+        //   title: 'Nombre',
+        //   info: _.user.name,
+        // ),
+        // ProfileDataInfo(
+        //   icon: FontAwesomeIcons.solidCalendarDays,
+        //   title: 'Fecha de nacimiento',
+        //   info: _.user.birthDate!,
+        // ),
+        // ProfileDataInfo(
+        //   icon: FontAwesomeIcons.at,
+        //   title: 'Correo Electrónico',
+        //   info: _.user.birthDate!,
+        // ),
       ],
     );
   }

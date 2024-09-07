@@ -7,8 +7,7 @@ const scaffoldBackgroundColor = Color.fromARGB(255, 29, 36, 40);
 const kContentColorDarkTheme = Color.fromARGB(255, 255, 255, 255);
 const kWarninngColor = Color.fromARGB(255, 248, 207, 88);
 const kErrorColor = Color.fromARGB(255, 255, 89, 99);
-
-const kSplashColor = Color(0xFF3E6F89);
+const kSplashColor = Color.fromARGB(255, 20, 24, 27);
 
 ThemeData themeDark() {
   return ThemeData.dark().copyWith(
