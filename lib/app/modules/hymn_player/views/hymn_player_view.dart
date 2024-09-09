@@ -40,7 +40,6 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
     final _ = controller;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: _customAppbar(context),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -51,21 +50,19 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _CustomImage(),
-                Text(
+                const Text(
                   'Jonas',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
-                    shadows: _shadows,
+                    //shadows: _shadows,
                   ),
                 ),
-                Text(
+                const Text(
                   'Enojo de Jonas',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 22,
-                    shadows: _shadows,
+                    //shadows: _shadows,
                   ),
                 ),
                  SizedBox(height: 20),
@@ -85,24 +82,24 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
       child: Container(
         height: 130,
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              const Color(0xffF5C00B),
-              const Color(0xffF5C00B).withOpacity(0.9),
-              const Color(0xffF5C00B).withOpacity(0.4),
-            ],
-          ),
-          // boxShadow: [
-          //   new BoxShadow(
-          //     color: Colors.grey.shade500,
-          //     blurRadius: 20.0,
-          //     spreadRadius: 1.0,
-          //   )
-          // ],
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topCenter,
+        //     end: Alignment.bottomCenter,
+        //     colors: [
+        //       Theme.of(context).scaffoldBackgroundColor,
+        //       Theme.of(context).scaffoldBackgroundColor.withOpacity(0.9),
+        //       Theme.of(context).scaffoldBackgroundColor.withOpacity(0.4),
+        //     ],
+        //   ),
+        //   boxShadow: [
+        //     new BoxShadow(
+        //       color: Colors.grey.shade500,
+        //       blurRadius: 20.0,
+        //       spreadRadius: 1.0,
+        //     )
+        //   ],
+        // ),
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
           child: Center(
@@ -111,17 +108,12 @@ class HymnPlayerView extends GetView<HymnPlayerController> {
             children: [
               const Spacer(),
               const SizedBox(width: 30),
-              Text(
-                todayWithYear(),
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
+              Text(todayWithYear(),
+                  style: const TextStyle(
+                      fontSize: 18.0, fontWeight: FontWeight.w500)),
               const Spacer(),
               IconButton(
-                icon: const Icon(Icons.close, size: 30, color: Colors.white),
+                icon: const Icon(Icons.close, size: 24),
                 onPressed: () => Navigator.pop(context),
               ),
             ],

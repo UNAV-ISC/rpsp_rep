@@ -35,7 +35,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.bottomBar;
+  static const initial = Routes.onboarding;
 
   static final routes = [
     GetPage(

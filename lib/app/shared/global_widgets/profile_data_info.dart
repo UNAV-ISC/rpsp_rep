@@ -27,20 +27,21 @@ class ProfileDataInfo extends StatelessWidget {
     final _prefs = StoragePrefs();
     var thme = _prefs.isDarkMode;
     //print(thme);
-    const titleStyleOrig = TextStyle(
-        fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey);
+    const titleStyleOrig = TextStyle(fontSize: 13, fontWeight: FontWeight.w600);
 
     var infoStyle = TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.w600,
-        color: thme ? Colors.grey : Colors.black);
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      //color: thme ? Colors.grey : Colors.black
+    );
     /*const infoStyle = TextStyle(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey);*/
 
     var titleStyleEditProfile = TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.w600,
-        color: thme ? Colors.white : Colors.black);
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      //color: thme ? Colors.white : Colors.black
+    );
 
     TextStyle titleStyle;
 
@@ -58,7 +59,7 @@ class ProfileDataInfo extends StatelessWidget {
     } else if (icon == null && titleInLeft) {
       kLeading = null;
     } else {
-      kLeading = Icon(icon, color: iconColor, size: 24);
+      kLeading = Icon(icon, color: iconColor, size: 20);
     }
 
     return Column(

@@ -47,9 +47,7 @@ class OnboardingView extends GetView<OnboardingController> {
                           () => Text(
                             _.isLastPage ? 'COMENZAR' : 'SIGUIENTE',
                             style: const TextStyle(
-                                color: Colors.white54,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0),
+                                fontWeight: FontWeight.bold, fontSize: 16.0),
                           ),
                         ),
                         onPressed: () => _.isLastPage
@@ -88,7 +86,6 @@ class _CustomButton extends StatelessWidget {
         ),
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
         child: MaterialButton(
-          disabledColor: Colors.grey,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
           height: 60,
