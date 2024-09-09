@@ -11,8 +11,9 @@ class _VerButton extends StatelessWidget {
         shape: const StadiumBorder(),
       ),
       child: const Text(
-        "Ver",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+        "Ir",
+        style: TextStyle(
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17),
       ),
       onPressed: () {},
     );

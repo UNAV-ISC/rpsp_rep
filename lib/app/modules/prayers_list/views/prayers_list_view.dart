@@ -20,16 +20,15 @@ class PrayersListView extends GetView<PrayersListController> {
         const Text(
           '''Lorem ipsum dolor sit amet consectetur adipiscing elit euismod tristique, eros suspendisse dignissim conubia velit nostra lacus luctus lobortis curabitur, habitasse libero integer class porttitor ac ante proin. Accumsan taciti urna netus potenti orci platea convallis molestie litora, rhoncus sem dapibus diam lacus proin a dis, mollis venenatis dui sollicitudin eget nulla interdum vehicula. Parturient ut purus vel sagittis, lacus nisl litora, varius augue ultrices.
           ''',
-          style: TextStyle(
-              height: 1.6, color: Colors.black87, fontWeight: FontWeight.w600),
+          style: TextStyle(height: 1.6, fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 20),
         CustomMaterialButton(
+          color: Theme.of(context).cardColor,
           paddingH: 0,
           child: const Text(
             'Agregar lista de peticiones',
             style: TextStyle(
-              color: Colors.white,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -38,27 +37,27 @@ class PrayersListView extends GetView<PrayersListController> {
         Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 150,
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 150,
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 150,
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 150,
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 150,
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
         ),
       ],
     );

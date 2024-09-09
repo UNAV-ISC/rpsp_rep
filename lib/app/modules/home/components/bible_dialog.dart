@@ -28,9 +28,12 @@ _bibleDialog(BuildContext context) {
           mainAxisSize: MainAxisSize.max,
           children: [
             CustomMaterialButton(
-                child: const Text('Escuchar'), onPressed: () {}),
+                color: Theme.of(context).cardColor,
+                child: const Text('Escuchar'),
+                onPressed: () {}),
             const SizedBox(height: 10),
             CustomMaterialButton(
+                color: Theme.of(context).cardColor,
                 child: const Text('Leer'),
                 onPressed: () {
                   Get.back();

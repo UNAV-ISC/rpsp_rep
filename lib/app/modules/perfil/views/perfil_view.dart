@@ -46,8 +46,7 @@ class ProfileView extends GetView<ProfileController> {
                   selectImage: _.selectImageFromGallery),
               _dataProfile(context),
               _links(),
-              _dataPersonal(context),
-              _rowData()
+              _dataPersonal(context)
             ],
           ),
         ),
@@ -79,9 +78,9 @@ class ProfileView extends GetView<ProfileController> {
                 width: 46,
                 decoration: BoxDecoration(
                     color: Get.theme.splashColor, shape: BoxShape.circle),
-                child: const Icon(FontAwesomeIcons.medal, size: 24)),
+                child: const Icon(FontAwesomeIcons.cakeCandles, size: 24)),
             const SizedBox(height: 12),
-            const Text('Medallero', style: TextStyle(fontSize: 16))
+            const Text('Cumpleaños', style: TextStyle(fontSize: 16))
           ]),
           Column(children: [
             Container(
@@ -103,13 +102,13 @@ class ProfileView extends GetView<ProfileController> {
 
     return Container(
       width: responsive.width,
-      height: 400,
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
+      height: responsive.height * 0.422,
+      decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(12),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,6 +122,7 @@ class ProfileView extends GetView<ProfileController> {
               title: 'Cumpleaños',
               info: _.user.birthDate!,
             ),
+            _rowData(),
           ],
         ),
       ),
@@ -143,10 +143,10 @@ class ProfileView extends GetView<ProfileController> {
                 style:
                     const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              // IconButton(
-              //   icon: const Icon(Icons.edit),
-              //   onPressed: () => navigateTo(context, EditProfileView()),
-              // )
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: () => navigateTo(context, EditProfileView()),
+              )
             ],
           ),
           subtitle: Text(
@@ -206,11 +206,7 @@ class ProfileView extends GetView<ProfileController> {
           const ProfileDataInfo(
             icon: FontAwesomeIcons.solidStar,
             title: 'Nivel de usuario',
-          ),
-          const ProfileDataInfo(
-            icon: FontAwesomeIcons.medal,
-            title: 'Medallero',
-          ),
+          )
         ],
       ),
     );
@@ -230,8 +226,7 @@ class ProfileView extends GetView<ProfileController> {
           _DarkModeSwitch(),
           const SizedBox(height: 15),
           const StarsLevel(),
-          const SizedBox(height: 15),
-          _VerButton()
+          const SizedBox(height: 15)
         ],
       ),
     );

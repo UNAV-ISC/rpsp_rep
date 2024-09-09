@@ -17,7 +17,7 @@ class _DarkModeSwitch extends GetView<ProfileController> {
           toggleSize: 28.0,
           borderRadius: 30.0,
           activeColor: Theme.of(context).primaryColor,
-          inactiveColor: const Color(0xffC8881F),
+          inactiveColor: Theme.of(context).primaryColor,
           value: _.darkMode.value,
           onToggle: (value) {
             _.darkMode.value = value;
