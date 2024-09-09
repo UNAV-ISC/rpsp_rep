@@ -16,6 +16,7 @@ import 'package:rpsp_main/app/shared/responisve/responsive.dart';
 import 'package:rpsp_main/app/shared/share_prefs/storage_prefs.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../controllers/home_controller.dart';
+import 'package:rpsp_main/app/modules/sync/views/demo.dart';
 
 part '../components/home_card.dart';
 part '../components/prayer_dialog.dart';
@@ -27,7 +28,9 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -45,6 +48,7 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
       ),
+      ) 
     );
   }
 
@@ -117,6 +121,13 @@ class HomeView extends GetView<HomeController> {
         title: 'Oración',
         onPressed: () => _prayerDialog(context),
       ),
+      
+      _HomeCard(icon: Icon(FontAwesomeIcons.moneyBillTransfer),
+       title: 'Sincronizacion', 
+       //onPressed: ()=> Get.toNamed(Routes.syncp),
+       onPressed: ()=> navigateTo(context, const Demo()),
+
+       )
     ];
   }
 }

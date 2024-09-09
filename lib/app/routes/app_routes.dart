@@ -21,6 +21,7 @@ abstract class Routes {
   static const hymnPlayer = _Paths.hymnPlayer;
   static const youtubePlayer = _Paths.youtubePlayer;
   static const blog = _Paths.blogView;
+  static const syncp = _Paths.syncp;
 }
 
 abstract class _Paths {
@@ -42,4 +43,5 @@ abstract class _Paths {
   static const hymnPlayer = '/hymn-player';
   static const youtubePlayer = '/video_youtube';
   static const blogView = '/blog-view';
+  static const syncp = '/sync';
 }

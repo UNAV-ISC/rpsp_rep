@@ -1,13 +1,17 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 //import 'package:rpsp_main/app/modules/home/views/home_view.dart';
 import 'package:rpsp_main/app/modules/text/views/text_view.dart';
+import 'package:rpsp_main/app/shared/conectivityCheck/checker.dart';
 import 'package:rpsp_main/app/shared/global_widgets/buttons/buttom_card.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 //import '../components_extra/bible_tab.dart';
 import '../controllers/bible_controller.dart';
 import 'app_bar_custom.dart'; // Actualiza la ruta según la ubicación real del archivo
 import 'package:rpsp_main/app/shared/share_prefs/storage_prefs.dart';
+import 'package:rpsp_main/app/shared/conectivityCheck/connService.dart';
 
 part '../components_extra/bible_tab.dart';
 part '../components_extra/bible_card.dart';
@@ -18,16 +22,14 @@ part '../components_extra/book_modal.dart';
 
 class BibleView2 extends GetView<BibleController> {
   const BibleView2({super.key});
+  //final _prefs = StoragePrefs();
+  
 
   @override
   Widget build(BuildContext context) {
-    //////
-    final _prefs = StoragePrefs();
-    ////
+    
     return Scaffold(
-      //Cambio de tema
-      //backgroundColor: _prefs.isDarkMode? const Color.fromARGB(255, 41, 61, 77):const Color.fromARGB(255, 255, 255, 255),
-      ///
+      
       body: SafeArea(
         child: Stack(
           children: [
@@ -37,6 +39,9 @@ class BibleView2 extends GetView<BibleController> {
                 children: [
                   const AppBarCustom(),
                   Expanded(child: _BibleTab()),
+                  //Expanded(child: _prefs.isConected? _BibleTab(): Checker()),
+                 
+
                 ],
               ),
             ),
@@ -69,4 +74,5 @@ class BibleView2 extends GetView<BibleController> {
       //onPressed: () {},
     );
   }*/
+  
 }

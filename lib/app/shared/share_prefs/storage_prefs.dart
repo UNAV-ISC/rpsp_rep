@@ -47,4 +47,11 @@ _prefs.setBool('isDarkMode', value);
   set darkTheme(bool value) {
     _prefs.setBool('darkTheme', value);
   }
+set isConected ( bool value){
+  _prefs.setBool('conected', value);
+}
+
+  bool get isConected {
+    return _prefs.getBool('conected') ?? false;
+  }
 }

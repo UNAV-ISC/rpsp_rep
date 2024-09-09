@@ -31,7 +31,7 @@ _themeDialog(BuildContext context){
           children: <Widget>[
             
             Text(
-              'El cambio de tema se relizará al volver a iniciar la app',
+              'Reinicia la aplicacion para confirmar el cambio de tema',
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),
             //SettingsWidget()
@@ -39,26 +39,15 @@ _themeDialog(BuildContext context){
         ),
       ),
       actions: <Widget>[
-        /*SizedBox(
-          width: responsive.wp(35),
-          // color: Colors.red,
-          child: CustomMaterialButton(
-            paddingV: 10,
-            color: Colors.white,
-            paddingH: 10,
-            height: 36,
-            child: const Text('Escuchar'),
-            onPressed: () {},
-          ),
-        ),*/
+        
         SizedBox(
           width: responsive.wp(35),
-          // color: Colors.yellow,
+          
           child: CustomMaterialButton(
             paddingV: 10,
             paddingH: 10,
-            color: Colors.white,
-            // width: 120,
+            color: const Color.fromARGB(255, 77, 77, 77),
+            
             height: 36,
             child: const Text(
               'Entendido',
@@ -70,20 +59,7 @@ _themeDialog(BuildContext context){
             },
           ),
         ),
-        // CustomMaterialButton(
-        //   paddingV: 10,
-        //   paddingH: 5,
-        //   // height: 40,
-        //   color: Colors.white,
-        //   child: Text(
-        //     'Ver Listas de Peticiones',
-        //     style: TextStyle(fontWeight: FontWeight.w700),
-        //   ),
-        //   onPressed: () {
-        //     Get.back();
-        //     navigateTo(context, BibleView());
-        //   },
-        // ),
+        
       ],
   ));
 
