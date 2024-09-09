@@ -2,15 +2,15 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import 'package:rpsp_main/app/shared/global_widgets/buttons/custom_material_button.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 import '../../home/views/home_view.dart';
 //import 'package:rpsp_main/app/shared/responisve/responsive.dart';
-=======
+//=======
 import 'package:get/get_core/get_core.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
->>>>>>> aa6a09b84f5a8ae81d4cf6fa76768b86e7511e5a
+//>>>>>>> aa6a09b84f5a8ae81d4cf6fa76768b86e7511e5a
 
 import 'package:rpsp_main/app/modules/edit_profile/views/edit_profile_view.dart';
 import 'package:rpsp_main/app/shared/global_widgets/starts_level.dart';

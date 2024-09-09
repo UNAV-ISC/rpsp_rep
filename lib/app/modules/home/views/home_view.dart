@@ -121,13 +121,13 @@ class HomeView extends GetView<HomeController> {
         title: 'Oración',
         onPressed: () => _prayerDialog(context),
       ),
-      
-      _HomeCard(icon: Icon(FontAwesomeIcons.moneyBillTransfer),
+      /*
+      _HomeCard(icon: Icon(FontAwesomeIcons.wifi),
        title: 'Sincronizacion', 
        //onPressed: ()=> Get.toNamed(Routes.syncp),
        onPressed: ()=> navigateTo(context, const Demo()),
 
-       )
+       )*/
     ];
   }
 }
