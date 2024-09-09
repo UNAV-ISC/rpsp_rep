@@ -5,75 +5,38 @@ _bibleDialog(BuildContext context) {
 
   Get.dialog(
     AlertDialog(
-      backgroundColor: Theme.of(context).primaryColor,
       scrollable: true,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const Icon(FontAwesomeIcons.bookBible, color: Colors.white),
-          const SizedBox(width: 15),
-          const Text(
-            'Cita de Hoy',
-            style: TextStyle(color: Colors.white, fontSize: 15),
-            textAlign: TextAlign.center,
-          ),
-          const Spacer(),
-          Text(
-            todayOnlyDay(),
-            style: const TextStyle(
-                color: Colors.white, fontSize: 12, fontWeight: FontWeight.w200),
-          )
-        ],
-      ),
-      content: SizedBox(
-        width: responsive.wp(80),
-        child: const Column(
+      title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        const Row(children: [
+          Icon(FontAwesomeIcons.bookBible),
+          SizedBox(width: 15),
+          Text('Cita de Hoy', style: TextStyle(fontSize: 15))
+        ]),
+        Text(todayOnlyDay(),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w300))
+      ]),
+      content: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'Jeremias1: 4-10',
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-            Text(
-              'El llamado de Jeremias',
-              style: TextStyle(fontSize: 18, color: Colors.white),
-            ),
-            //SettingsWidget()
-          ],
-        ),
-      ),
+            Text('Jeremias1: 4-10', style: TextStyle(fontSize: 14)),
+            Text('El llamado de Jeremias', style: TextStyle(fontSize: 16)),
+          ]),
       actions: <Widget>[
-        SizedBox(
-          width: responsive.wp(35),
-          // color: Colors.red,
-          child: CustomMaterialButton(
-            paddingV: 10,
-            color: Colors.white,
-            paddingH: 10,
-            height: 36,
-            child: const Text('Escuchar'),
-            onPressed: () {},
-          ),
-        ),
-        SizedBox(
-          width: responsive.wp(35),
-          // color: Colors.yellow,
-          child: CustomMaterialButton(
-            paddingV: 10,
-            paddingH: 10,
-            color: Colors.white,
-            // width: 120,
-            height: 36,
-            child: const Text(
-              'Leer',
-              style: TextStyle(fontWeight: FontWeight.w600),
-            ),
-            onPressed: () {
-              Get.back();
-              navigateTo(context, const BibleView());
-            },
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            CustomMaterialButton(
+                child: const Text('Escuchar'), onPressed: () {}),
+            const SizedBox(height: 10),
+            CustomMaterialButton(
+                child: const Text('Leer'),
+                onPressed: () {
+                  Get.back();
+                  navigateTo(context, const BibleView());
+                })
+          ],
         ),
         // CustomMaterialButton(
         //   paddingV: 10,

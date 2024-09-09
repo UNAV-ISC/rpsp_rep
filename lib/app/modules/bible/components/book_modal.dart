@@ -27,17 +27,11 @@ _bookModal({
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.folder,
-                  //color: Colors.grey,
-                ),
-                const SizedBox(width: 2),
-                Text('$numCaps Capítulos'),
-              ],
-            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Icon(Icons.folder),
+              const SizedBox(width: 2),
+              Text('$numCaps Capítulos')
+            ]),
             const SizedBox(height: 10),
             Expanded(
                 child: ListView.builder(

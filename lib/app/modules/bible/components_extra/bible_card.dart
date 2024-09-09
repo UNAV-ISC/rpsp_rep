@@ -14,19 +14,14 @@ class _BlibleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _prefs = StoragePrefs();
     return Card(
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ButtonCard(
           child: ListTile(
-            title: Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
+            title: Text(title,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             trailing: const Icon(Icons.chevron_right),
           ),
           onTap: () {

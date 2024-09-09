@@ -22,8 +22,6 @@ class _HomeCard extends StatelessWidget {
         onTap: onPressed,
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-          //visualDensity: VisualDensity.compact,
-          // contentPadding: EdgeInsets.only(left: 15, right: 0),
           leading: icon,
           title: Text(
             title,

@@ -19,10 +19,9 @@ class _BlibleCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ButtonCard(
           child: ListTile(
-            title: Text(
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            ),
+            title: Text(title,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             trailing: const Icon(Icons.chevron_right),
           ),
           onTap: () {

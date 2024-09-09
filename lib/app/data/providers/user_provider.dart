@@ -3,10 +3,10 @@ import 'package:rpsp_main/app/data/models/user.dart';
 
 class UserProvider extends GetxService {
   User user = User(
-    name: 'Alex',
-    lastName: 'Fernandez',
-    email: 'alex@gmail.com',
-    birthDate: '02 de Febrero 1993',
+    name: 'Gamaliel',
+    lastName: 'Hernandez',
+    email: '+529531437195',
+    birthDate: '02 Febrero',
     country: 'Cuba',
     county: 'Santiago',
     language: 'Español',

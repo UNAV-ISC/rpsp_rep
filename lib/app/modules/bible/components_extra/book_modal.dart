@@ -10,11 +10,10 @@ _bookModal({
   return showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Colors.transparent,
+    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     builder: (context) => Container(
-        height: MediaQuery.of(context).size.height * 0.70,
+        height: MediaQuery.of(context).size.height * 0.50,
         decoration: const BoxDecoration(
-          color: Color(0xffF1F4F9),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
@@ -28,18 +27,11 @@ _bookModal({
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.folder,
-                  color: Colors.grey,
-                ),
-                const SizedBox(width: 2),
-                Text('$numCaps Capítulos',
-                    style: const TextStyle(color: Colors.grey)),
-              ],
-            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Icon(Icons.folder),
+              const SizedBox(width: 2),
+              Text('$numCaps Capítulos')
+            ]),
             const SizedBox(height: 10),
             Expanded(
                 child: ListView.builder(

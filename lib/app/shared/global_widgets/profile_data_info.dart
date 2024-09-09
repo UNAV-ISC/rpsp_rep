@@ -11,7 +11,8 @@ class ProfileDataInfo extends StatelessWidget {
   final Widget? widget;
   final bool isTitleStyleEditProfile;
 
-  const ProfileDataInfo({super.key, 
+  const ProfileDataInfo({
+    super.key,
     required this.title,
     this.info,
     this.icon,
@@ -30,12 +31,16 @@ class ProfileDataInfo extends StatelessWidget {
         fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey);
 
     var infoStyle = TextStyle(
-        fontSize: 15, fontWeight: FontWeight.w600, color: thme ? Colors.grey : Colors.black);
-  /*const infoStyle = TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+        color: thme ? Colors.grey : Colors.black);
+    /*const infoStyle = TextStyle(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.grey);*/
 
     var titleStyleEditProfile = TextStyle(
-        fontSize: 15, fontWeight: FontWeight.w600,  color: thme ? Colors.white : Colors.black);
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+        color: thme ? Colors.white : Colors.black);
 
     TextStyle titleStyle;
 
@@ -53,7 +58,7 @@ class ProfileDataInfo extends StatelessWidget {
     } else if (icon == null && titleInLeft) {
       kLeading = null;
     } else {
-      kLeading = Icon(icon, color: iconColor, size: 15);
+      kLeading = Icon(icon, color: iconColor, size: 24);
     }
 
     return Column(
@@ -67,14 +72,13 @@ class ProfileDataInfo extends StatelessWidget {
           title: Text(title, style: titleStyle
               // this.info == null ? infoStyle : titleStyle
               ),
-          subtitle:
-              info == null ? null : Text(info!, style: infoStyle),
+          subtitle: info == null ? null : Text(info!, style: infoStyle),
         ),
         if (widget != null)
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: widget,
-          )
+          ),
       ],
     );
   }

@@ -2,40 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 
 ThemeData themeLight() {
-  print('themeLight');
-  return ThemeData(
-    //canvasColor: const Color.fromARGB(255, 20, 24, 27),
-    cardColor: const Color.fromARGB(255, 255, 255, 255),
-    brightness: Brightness.light,
-    primaryColor: const Color.fromARGB(255, 2, 50, 70), // //  Color(0xFF3E6F89)
-    hintColor: const Color.fromARGB(255, 255, 255, 255), //COlor opaco
-    scaffoldBackgroundColor: const Color.fromARGB(255, 226, 229, 233),
-    indicatorColor: const Color.fromARGB(255, 62, 111, 137),
-    iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
-    textTheme: const TextTheme(
-        bodyLarge: TextStyle(color: Color.fromARGB(255, 20, 24, 27))),
-    appBarTheme: const AppBarTheme(
-        iconTheme: IconThemeData(color: scaffoldBackgroundColor),
-        actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor)),
+  return ThemeData.light().copyWith(
+      //canvasColor: const Color.fromARGB(255, 20, 24, 27),
+      cardColor: const Color.fromARGB(255, 255, 255, 255),
+      brightness: Brightness.light,
+      primaryColor: const Color.fromARGB(255, 29, 36, 40),
+      secondaryHeaderColor: const Color.fromARGB(255, 87, 99, 108),
+      hintColor: const Color.fromARGB(255, 255, 255, 255), //COlor opaco
+      scaffoldBackgroundColor: const Color.fromARGB(255, 226, 229, 233),
+      indicatorColor: const Color.fromARGB(255, 62, 111, 137),
+      iconTheme: const IconThemeData(color: Color.fromARGB(255, 87, 99, 108)),
+      splashColor: const Color.fromARGB(255, 20, 24, 27),
+      primaryTextTheme: const TextTheme(
+        titleLarge: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+        titleMedium: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+        titleSmall: TextStyle(color: Color.fromARGB(255, 87, 99, 108)),
+        bodyLarge: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+        bodyMedium: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+        bodySmall: TextStyle(color: Color.fromARGB(255, 20, 24, 27)),
+      ),
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: scaffoldBackgroundColor),
+          actionsIconTheme: IconThemeData(color: scaffoldBackgroundColor)),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Color.fromARGB(255, 241, 244, 248),
+        selectedItemColor: Color.fromARGB(255, 29, 36, 40),
+        unselectedItemColor: Color.fromARGB(255, 87, 99, 108),
+        selectedIconTheme:
+            IconThemeData(color: Color.fromARGB(255, 29, 36, 40)),
+        showUnselectedLabels: true,
+      ),
+      tabBarTheme: const TabBarTheme(
+        indicatorColor: Color.fromARGB(255, 29, 36, 40),
+        labelColor: Color.fromARGB(255, 29, 36, 40),
+        unselectedLabelColor: Color.fromARGB(255, 87, 99, 108),
+      )
 
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Color.fromARGB(255, 241, 244, 248),
-      selectedItemColor: Color.fromARGB(255, 29, 36, 40),
-      unselectedItemColor: Color.fromARGB(255, 87, 99, 108),
-      selectedIconTheme: IconThemeData(color: Color.fromARGB(255, 29, 36, 40)),
-      showUnselectedLabels: true,
-    ),
+      //Botones
 
-    //Botones
-
-    // buttonTheme: ButtonThemeData(
-    //   buttonColor: kprimaryColor, // Background color (orange in my case).
-    //   textTheme: ButtonTextTheme.accent,
-    //   colorScheme: Theme.of(context)
-    //       .colorScheme
-    //       .copyWith(secondary: Colors.white), // Text color
-    // ),
-  );
+      // buttonTheme: ButtonThemeData(
+      //   buttonColor: kprimaryColor, // Background color (orange in my case).
+      //   textTheme: ButtonTextTheme.accent,
+      //   colorScheme: Theme.of(context)
+      //       .colorScheme
+      //       .copyWith(secondary: Colors.white), // Text color
+      // ),
+      );
 }
 
 
