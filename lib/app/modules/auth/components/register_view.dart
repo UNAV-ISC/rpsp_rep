@@ -10,45 +10,63 @@ class _RegisterView extends GetView<AuthController> {
       key: _.formKeyregister,
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 90),
-              NameLogoApp(color: Theme.of(context).canvasColor),
+              NameLogoApp(color: Theme.of(context).primaryColor),
               const SizedBox(height: 50),
-              const Text(
-                'Ingresa tu correo para unirte a nuestra comunidad',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-              ),
-              const SizedBox(height: 10),
+              const Text('Ya tienes una cuenta?',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+              const SizedBox(height: 20),
               TextFieldCustom(
-                controller: _.emailTextController,
-                hintText: 'micorreo@gmail.com',
+                  backgroundColor: Theme.of(context).cardColor,
+                  controller: _.numberTextController,
+                  hintText: '999 999 999',
+                  textInputType: TextInputType.text,
+                  validator: (value) {
+                    if (!value!.isPhoneNumber) return 'Numero no válido'.tr;
+                    return null;
+                  }),
+              const SizedBox(height: 20),
+              TextFieldCustom(
+                backgroundColor: const Color(0xffFCFCFC),
+                controller: _.nameTextController,
+                hintText: 'Nombre',
                 textInputType: TextInputType.text,
                 validator: (value) {
-                  if (!value!.isEmail) return 'Email no válido'.tr;
-
+                  if (value == null || value.isEmpty || value.length < 2) {
+                    return 'El nombre es requerido';
+                  }
                   return null;
                 },
               ),
               const SizedBox(height: 20),
               CustomMaterialButton(
-                child: const Text('continuar con correo',
+                borderRadius: 20,
+                onPressed: _navigateToBottomBar,
+                child: const Text('Ingresar',
                     style: TextStyle(fontSize: 16, color: Colors.white)),
-                onPressed: () => _.goToPage(2),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 20),
               CustomMaterialButton(
+                borderRadius: 20,
+                child: const Text('Registrarme',
+                    style: TextStyle(fontSize: 16, color: Colors.white)),
+                onPressed: () => _.goToPage(1),
+              ),
+              const SizedBox(height: 20),
+              CustomMaterialButton(
+                  borderRadius: 20,
                   color: const Color(0xff4167B2),
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // SizedBox(width: 20),
                       Icon(FontAwesomeIcons.facebook, color: Colors.white),
                       SizedBox(width: 20),
-                      Text('seguir con facebook',
+                      Text('Seguir con Facebook',
                           style: TextStyle(fontSize: 16, color: Colors.white)),
                     ],
                   ),
@@ -61,4 +79,6 @@ class _RegisterView extends GetView<AuthController> {
       ),
     ));
   }
+
+  _navigateToBottomBar() => Get.offNamed(Routes.bottomBar);
 }

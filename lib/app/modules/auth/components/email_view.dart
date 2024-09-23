@@ -14,27 +14,27 @@ class _EmailView extends GetView<AuthController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 90),
-              NameLogoApp(color: Theme.of(context).canvasColor),
+              NameLogoApp(color: Theme.of(context).primaryColor),
               const SizedBox(height: 50),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Cúal es tu correo?',
+                  'Cúal es tu Numero de Telefono?',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
               const Text(
-                'Ingresa tu correo para para completar tu perfil',
+                'Ingresa tu numero para para completar tu perfil',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 10),
               TextFieldCustom(
                 backgroundColor: const Color(0xffFCFCFC),
-                controller: _.emailTextController,
-                hintText: 'micorreo@gmail.com',
+                controller: _.numberTextController,
+                hintText: '+51 999 999 999',
                 textInputType: TextInputType.text,
                 validator: (value) {
-                  if (!value!.isEmail) return 'Email no válido'.tr;
+                  if (!value!.isPhoneNumber) return 'Numero no válido'.tr;
 
                   return null;
                 },

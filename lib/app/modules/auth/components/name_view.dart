@@ -14,17 +14,17 @@ class _NameView extends GetView<AuthController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 90),
-              NameLogoApp(color: Theme.of(context).canvasColor),
+              NameLogoApp(color: Theme.of(context).primaryColor),
               const SizedBox(height: 50),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Cúal es tu nombre?',
+                  'Cúal es tu Nombre?',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
               const Text(
-                'Ingresa tu nombre para para completar tu perfil',
+                'Ingresa solo tu nombre para para completar tu perfil',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 10),

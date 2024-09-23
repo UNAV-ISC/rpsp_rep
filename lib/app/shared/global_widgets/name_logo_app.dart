@@ -14,7 +14,7 @@ class NameLogoApp extends StatelessWidget {
               color: color, fontSize: 50, fontWeight: FontWeight.bold),
         ),
         Text(
-          '2021',
+          '2024',
           style: TextStyle(color: color, fontSize: 25),
         ),
       ],

@@ -43,17 +43,15 @@ class OnboardingView extends GetView<OnboardingController> {
                       OnboardingItems(),
                       const SizedBox(height: 50),
                       _CustomButton(
-                        child: Obx(
-                          () => Text(
-                            _.isLastPage ? 'COMENZAR' : 'SIGUIENTE',
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16.0),
-                          ),
-                        ),
-                        onPressed: () => _.isLastPage
-                            ? Get.offNamed(Routes.auth)
-                            : _.fowardAction(),
-                      ),
+                          child: Obx(() => Text(
+                              _.isLastPage ? 'COMENZAR' : 'SIGUIENTE',
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0))),
+                          onPressed: () => _.isLastPage
+                              ? Get.offNamed(Routes.auth)
+                              : _.fowardAction()),
                       const SizedBox(height: 40),
                     ],
                   ),
@@ -86,11 +84,12 @@ class _CustomButton extends StatelessWidget {
         ),
         margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
         child: MaterialButton(
+          disabledColor: Theme.of(context).primaryColorDark,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           height: 60,
           minWidth: responsive.width,
-          color: Theme.of(context).indicatorColor,
+          color: Theme.of(context).primaryColor,
           elevation: 6,
           padding: const EdgeInsets.all(7.0),
           onPressed: onPressed,

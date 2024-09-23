@@ -11,7 +11,7 @@ class _PerfilPhotoView extends GetView<AuthController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 90),
-            NameLogoApp(color: Theme.of(context).canvasColor),
+            NameLogoApp(color: Theme.of(context).primaryColor),
             const SizedBox(height: 50),
             const Align(
               alignment: Alignment.centerLeft,
@@ -21,10 +21,10 @@ class _PerfilPhotoView extends GetView<AuthController> {
               ),
             ),
             const Text(
-              'Selecciona una foto para compartirla y se vista por nuestra comunidad',
+              'Selecciona una foto para que la comunidad te reconozca',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             // _SelectAndUploadImage(),
             GetBuilder<AuthController>(
               id: 'avatar',
@@ -37,10 +37,9 @@ class _PerfilPhotoView extends GetView<AuthController> {
 
             const Spacer(),
             CustomMaterialButton(
-              color: const Color(0xffD3D4CE),
               onPressed: _navigateToBottomBar,
               child: const Text('OMITIR',
-                  style: TextStyle(fontSize: 16, color: Colors.black)),
+                  style: TextStyle(fontSize: 16, color: Colors.white)),
             ),
             const SizedBox(height: 20),
             CustomMaterialButton(

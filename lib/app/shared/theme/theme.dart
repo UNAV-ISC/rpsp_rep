@@ -3,7 +3,7 @@ import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 
 ThemeData themeLight() {
   return ThemeData.light().copyWith(
-      //canvasColor: const Color.fromARGB(255, 20, 24, 27),
+      canvasColor: const Color.fromARGB(255, 20, 24, 27),
       cardColor: const Color.fromARGB(255, 255, 255, 255),
       brightness: Brightness.light,
       primaryColor: const Color.fromARGB(255, 29, 36, 40),

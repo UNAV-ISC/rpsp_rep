@@ -18,7 +18,7 @@ class OnboardingItems extends StatelessWidget {
               height: 8,
               decoration: BoxDecoration(
                   color: _.selectedPageIndex.value == index
-                      ? Colors.greenAccent
+                      ? const Color.fromARGB(255, 29, 36, 40)
                       : Colors.white,
                   shape: BoxShape.circle),
             );

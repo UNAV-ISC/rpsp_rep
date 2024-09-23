@@ -13,7 +13,7 @@ class AuthController extends GetxController {
 
   var formKeyName = GlobalKey<FormState>();
 
-  final emailTextController = TextEditingController();
+  final numberTextController = TextEditingController();
   final nameTextController = TextEditingController();
 
   File file = File('');
