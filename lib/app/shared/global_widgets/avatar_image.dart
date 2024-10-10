@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:rpsp_main/app/shared/theme/theme_dark.dart';
 
 class AvatarImage extends StatelessWidget {
   final File file;
@@ -71,24 +72,22 @@ class AvatarImage extends StatelessWidget {
     Get.bottomSheet(
       Container(
         height: 200,
+        width: double.infinity,
         color: Colors.transparent,
         child: Ink(
             padding: const EdgeInsets.only(top: 20),
             decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(40),
-                topLeft: Radius.circular(40),
-              ),
-              color: Color(0xFF3E6F89),
-            ),
-            height: 100,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20)),
+                color: kPrimaryColor),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _CustomButton(text: 'CAMARA', onPressed: captureImage!),
                 _CustomButton(text: 'GALERIA', onPressed: selectImage!),
                 _CustomButton(text: 'CANCELAR', onPressed: () {}),
-                const SizedBox(height: 5),
+                const SizedBox(height: 5)
               ],
             )),
       ),
@@ -105,10 +104,9 @@ class _CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const textStyleModal = TextStyle(color: Colors.white, fontSize: 17);
+    const textStyleModal =
+        TextStyle(color: kContentColorDarkTheme, fontSize: 14);
     return TextButton(
-      style: ButtonStyle(
-          minimumSize: MaterialStateProperty.all(const Size(250, 50))),
       child: Text(text, style: textStyleModal),
       onPressed: () {
         Get.back();

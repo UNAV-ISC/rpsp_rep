@@ -28,9 +28,9 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: SafeArea(
+        body: SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -38,18 +38,17 @@ class HomeView extends GetView<HomeController> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               UserDataLogo(),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               ..._buildCards(context),
-              const SizedBox(height: 40),
+              const SizedBox(height: 15),
               _Calendar(),
             ],
           ),
         ),
       ),
-      ) 
-    );
+    ));
   }
 
   _buildCards(BuildContext context) {
@@ -84,24 +83,14 @@ class HomeView extends GetView<HomeController> {
           title: 'Video',
           rightText: 'RPSP',
           onPressed: () => Get.toNamed(Routes.youtubePlayer)),
-      //onPressed: () => Get.toNamed(Routes.VIDEO_PLAYER)),
       _HomeCard(
-        icon: const Stack(
-          children: [
-            Icon(FontAwesomeIcons.bookBible),
-          ],
-        ),
-        title: 'Biblia',
-        rightText: '1 de reyes',
-        //onPressed: () => Get.toNamed(Routes.BIBLE),
-        onPressed: () => _bibleDialog(context),
-      ),
+          icon: const Stack(children: [Icon(FontAwesomeIcons.bookBible)]),
+          title: 'Biblia',
+          rightText: '1 de reyes',
+          //onPressed: () => Get.toNamed(Routes.BIBLE),
+          onPressed: () => _bibleDialog(context)),
       _HomeCard(
-          icon: const Stack(
-            children: [
-              Icon(FontAwesomeIcons.book),
-            ],
-          ),
+          icon: const Stack(children: [Icon(FontAwesomeIcons.book)]),
           title: 'EGW',
           rightText: 'Capítulo 4',
           onPressed: () => (
@@ -111,23 +100,20 @@ class HomeView extends GetView<HomeController> {
               // ),
               navigateTo(context, EGWView()))),
       _HomeCard(
-        icon: const Icon(FontAwesomeIcons.music),
-        title: 'Himno',
-        rightText: '#125',
-        onPressed: () => Get.toNamed(Routes.hymnPlayer),
-      ),
+          icon: const Icon(FontAwesomeIcons.music),
+          title: 'Himno',
+          rightText: '#125',
+          onPressed: () => Get.toNamed(Routes.hymnPlayer)),
       _HomeCard(
-        icon: const Icon(FontAwesomeIcons.handsPraying),
-        title: 'Oración',
-        onPressed: () => _prayerDialog(context),
-      ),
-      /*
-      _HomeCard(icon: Icon(FontAwesomeIcons.wifi),
-       title: 'Sincronizacion', 
-       //onPressed: ()=> Get.toNamed(Routes.syncp),
-       onPressed: ()=> navigateTo(context, const Demo()),
-
-       )*/
+          icon: const Icon(FontAwesomeIcons.handsPraying),
+          title: 'Oración',
+          onPressed: () => _prayerDialog(context)),
+      _HomeCard(
+        icon: const Icon(FontAwesomeIcons.circlePlus),
+        title: 'Recursos',
+        //onPressed: ()=> Get.toNamed(Routes.syncp),
+        onPressed: () => navigateTo(context, const Demo()),
+      )
     ];
   }
 }

@@ -52,6 +52,7 @@ flutter:
     - assets/
     - assets/plans/
     - assets/onboarding/
+    - assets/recursos/
 flutter_intl:
   enabled: true
   class_name: S
