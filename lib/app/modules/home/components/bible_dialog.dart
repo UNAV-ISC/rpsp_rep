@@ -27,11 +27,11 @@ _bibleDialog(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: [
-            CustomMaterialButton(
-                color: Theme.of(context).cardColor,
-                child: const Text('Escuchar'),
-                onPressed: () {}),
-            const SizedBox(height: 10),
+            // CustomMaterialButton(
+            //     color: Theme.of(context).cardColor,
+            //     child: const Text('Escuchar'),
+            //     onPressed: () {}),
+            // const SizedBox(height: 10),
             CustomMaterialButton(
                 color: Theme.of(context).cardColor,
                 child: const Text('Leer'),

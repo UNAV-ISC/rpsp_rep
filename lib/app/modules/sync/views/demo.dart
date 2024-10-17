@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rpsp_main/app/modules/egw/views/egw_view.dart';
+import 'package:get/get.dart';
+import 'package:rpsp_main/app/modules/video_player/views/video_youtube.dart';
+import 'package:rpsp_main/app/routes/app_pages.dart';
 import 'package:rpsp_main/app/shared/helpers/navigate_to.dart';
 import 'package:url_launcher/url_launcher.dart';
 part '../components/recursos_card.dart';
@@ -47,7 +49,7 @@ _buildCards(BuildContext context) {
           image: AssetImage('assets/recursos/logo_radio-esperanza.png')),
       title: 'Radio',
       rightText: '',
-      onPressed: () {},
+      onPressed: () => Get.toNamed(Routes.youtubePlayer),
     ),
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -61,7 +63,7 @@ _buildCards(BuildContext context) {
           rightText: '',
           onPressed: () {
             _launchURL(
-                'https://play.google.com/store/apps/details?id=mx.daro.himnario'); // Aquí coloca el enlace de tu app en la Play Store
+                'https://play.google.com/store/apps/details?id=mx.daro.himnario');
           },
         ),
         const SizedBox(width: 15),
@@ -74,7 +76,7 @@ _buildCards(BuildContext context) {
           rightText: '',
           onPressed: () {
             _launchURL(
-                'https://play.google.com/store/apps/details?id=org.reyfasoft.reinavalera1960'); // Aquí coloca el enlace de tu app en la Play Store
+                'https://play.google.com/store/apps/details?id=org.reyfasoft.reinavalera1960');
           },
         ),
       ],
@@ -87,17 +89,24 @@ _buildCards(BuildContext context) {
               width: 140, image: AssetImage('assets/recursos/reavivados.png')),
           title: 'Canal YouTube',
           rightText: '',
-          onPressed: () {},
+          onPressed: () {
+            _launchURL(
+                'https://www.youtube.com/@reavivadosporsupalabraoficial');
+          },
         ),
         const SizedBox(width: 15),
         _DemoCard(
-            image: const Image(
-                height: 130,
-                width: 140,
-                image: AssetImage('assets/recursos/EGW-logo.png')),
-            title: 'Escritos EGW',
-            rightText: '',
-            onPressed: () => (navigateTo(context, EGWView()))),
+          image: const Image(
+              height: 130,
+              width: 140,
+              image: AssetImage('assets/recursos/EGW-logo.png')),
+          title: 'Escritos EGW',
+          rightText: '',
+          onPressed: () {
+            _launchURL(
+                'https://play.google.com/store/apps/details?id=com.whiteestate.egwwritings');
+          },
+        ),
       ],
     ),
     Row(
@@ -110,7 +119,7 @@ _buildCards(BuildContext context) {
           rightText: '',
           onPressed: () {
             _launchURL(
-                'https://play.google.com/store/apps/details?id=com.cryart.sabbathschool'); // Aquí coloca el enlace de tu app en la Play Store
+                'https://play.google.com/store/apps/details?id=com.cryart.sabbathschool');
           },
         ),
         const SizedBox(width: 15),
@@ -118,35 +127,13 @@ _buildCards(BuildContext context) {
           image: const Image(
               width: 140,
               height: 140,
-              image: AssetImage('assets/recursos/adultos.jpg')),
-          title: 'Devocional Adultos',
-          rightText: '',
-          onPressed: () {},
-        ),
-      ],
-    ),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _DemoCard(
-          image: const Image(
-              width: 140, image: AssetImage('assets/recursos/damas.png')),
-          title: 'Devocional Damas',
+              image: AssetImage('assets/recursos/matinal.png')),
+          title: 'Devoción Matutina',
           rightText: '',
           onPressed: () {
             _launchURL(
-                'https://play.google.com/store/apps/details?id=com.cryart.sabbathschool'); // Aquí coloca el enlace de tu app en la Play Store
+                'https://play.google.com/store/apps/details?id=com.advenz.devocionalesmatutinos');
           },
-        ),
-        const SizedBox(width: 15),
-        _DemoCard(
-          image: const Image(
-              width: 140,
-              height: 140,
-              image: AssetImage('assets/recursos/jovenes.jpg')),
-          title: 'Devocional Jóvenes',
-          rightText: '',
-          onPressed: () {},
         ),
       ],
     ),
