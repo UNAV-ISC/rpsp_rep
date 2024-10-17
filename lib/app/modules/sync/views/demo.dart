@@ -1,7 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rpsp_main/app/modules/egw/views/egw_view.dart';
+import 'package:rpsp_main/app/shared/helpers/navigate_to.dart';
+import 'package:url_launcher/url_launcher.dart';
 part '../components/recursos_card.dart';
 
 class Demo extends StatelessWidget {
@@ -30,6 +31,14 @@ class Demo extends StatelessWidget {
   }
 }
 
+Future<void> _launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'No se pudo abrir el enlace: $url';
+  }
+}
+
 _buildCards(BuildContext context) {
   return [
     _DemoCard(
@@ -46,16 +55,71 @@ _buildCards(BuildContext context) {
         _DemoCard(
           image: const Image(
               height: 140,
+              width: 140,
               image: AssetImage('assets/recursos/himnario-logo.png')),
-          title: 'Himnario Oficial',
+          title: 'Himnario',
+          rightText: '',
+          onPressed: () {
+            _launchURL(
+                'https://play.google.com/store/apps/details?id=mx.daro.himnario'); // Aquí coloca el enlace de tu app en la Play Store
+          },
+        ),
+        const SizedBox(width: 15),
+        _DemoCard(
+          image: const Image(
+              height: 140,
+              width: 140,
+              image: AssetImage('assets/recursos/bible.png')),
+          title: 'Biblia',
+          rightText: '',
+          onPressed: () {
+            _launchURL(
+                'https://play.google.com/store/apps/details?id=org.reyfasoft.reinavalera1960'); // Aquí coloca el enlace de tu app en la Play Store
+          },
+        ),
+      ],
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _DemoCard(
+          image: const Image(
+              width: 140, image: AssetImage('assets/recursos/reavivados.png')),
+          title: 'Canal YouTube',
           rightText: '',
           onPressed: () {},
         ),
         const SizedBox(width: 15),
         _DemoCard(
+            image: const Image(
+                height: 130,
+                width: 140,
+                image: AssetImage('assets/recursos/EGW-logo.png')),
+            title: 'Escritos EGW',
+            rightText: '',
+            onPressed: () => (navigateTo(context, EGWView()))),
+      ],
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _DemoCard(
           image: const Image(
-              height: 140, image: AssetImage('assets/recursos/bible.png')),
-          title: 'Biblia Oficial',
+              width: 140, image: AssetImage('assets/recursos/esc_sab.png')),
+          title: 'Escuela Sabática',
+          rightText: '',
+          onPressed: () {
+            _launchURL(
+                'https://play.google.com/store/apps/details?id=com.cryart.sabbathschool'); // Aquí coloca el enlace de tu app en la Play Store
+          },
+        ),
+        const SizedBox(width: 15),
+        _DemoCard(
+          image: const Image(
+              width: 140,
+              height: 140,
+              image: AssetImage('assets/recursos/adultos.jpg')),
+          title: 'Devocional Adultos',
           rightText: '',
           onPressed: () {},
         ),
@@ -66,40 +130,21 @@ _buildCards(BuildContext context) {
       children: [
         _DemoCard(
           image: const Image(
-              width: 140, image: AssetImage('assets/recursos/reavivados.png')),
-          title: 'YouTube Oficial',
+              width: 140, image: AssetImage('assets/recursos/damas.png')),
+          title: 'Devocional Damas',
           rightText: '',
-          onPressed: () {},
+          onPressed: () {
+            _launchURL(
+                'https://play.google.com/store/apps/details?id=com.cryart.sabbathschool'); // Aquí coloca el enlace de tu app en la Play Store
+          },
         ),
         const SizedBox(width: 15),
         _DemoCard(
           image: const Image(
               width: 140,
               height: 140,
-              image: AssetImage('assets/recursos/EGW-logo.png')),
-          title: 'Escritos EGW',
-          rightText: '',
-          onPressed: () {},
-        ),
-      ],
-    ),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _DemoCard(
-          image: const Image(
-              width: 140, image: AssetImage('assets/recursos/reavivados.png')),
-          title: 'YouTube Oficial',
-          rightText: '',
-          onPressed: () {},
-        ),
-        const SizedBox(width: 15),
-        _DemoCard(
-          image: const Image(
-              width: 140,
-              height: 140,
-              image: AssetImage('assets/recursos/EGW-logo.png')),
-          title: 'Escritos EGW',
+              image: AssetImage('assets/recursos/jovenes.jpg')),
+          title: 'Devocional Jóvenes',
           rightText: '',
           onPressed: () {},
         ),
